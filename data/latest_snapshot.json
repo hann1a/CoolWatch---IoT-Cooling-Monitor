@@ -1,8 +1,761 @@
 {
-  "temperature": [],
-  "gas": [],
-  "alerts": [],
-  "latest_temp": null,
-  "latest_gas": null,
-  "updated_at": "2026-05-24T12:24:16.623163Z"
+  "temperature": [
+    {
+      "time": "2026-05-24T18:52:49.284120Z",
+      "value": 26.2,
+      "fan": "OFF",
+      "pwm": 0,
+      "level": "OK"
+    },
+    {
+      "time": "2026-05-24T18:52:51.301942Z",
+      "value": 33.7,
+      "fan": "LOW",
+      "pwm": 80,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:52:53.319745Z",
+      "value": 33.8,
+      "fan": "LOW",
+      "pwm": 80,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:52:55.337805Z",
+      "value": 34.0,
+      "fan": "LOW",
+      "pwm": 80,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:52:57.354188Z",
+      "value": 40.8,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:52:59.377525Z",
+      "value": 40.8,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:01.406597Z",
+      "value": 40.2,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:03.423226Z",
+      "value": 40.0,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:05.440649Z",
+      "value": 40.1,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:07.456701Z",
+      "value": 39.9,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:09.480358Z",
+      "value": 39.8,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:11.501200Z",
+      "value": 40.1,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:13.522066Z",
+      "value": 40.3,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:15.540194Z",
+      "value": 40.1,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:17.556683Z",
+      "value": 40.3,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:19.581143Z",
+      "value": 40.3,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:21.596786Z",
+      "value": 40.4,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:23.614156Z",
+      "value": 40.2,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:25.634782Z",
+      "value": 40.0,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:27.651607Z",
+      "value": 39.8,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:29.669298Z",
+      "value": 40.1,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:31.686263Z",
+      "value": 40.1,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:33.703078Z",
+      "value": 39.9,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:35.716658Z",
+      "value": 40.2,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:37.734681Z",
+      "value": 40.1,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:39.753716Z",
+      "value": 39.9,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:41.771887Z",
+      "value": 40.2,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:43.790073Z",
+      "value": 40.4,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:45.806981Z",
+      "value": 40.4,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:47.824661Z",
+      "value": 40.7,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:49.844599Z",
+      "value": 40.9,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:51.862902Z",
+      "value": 40.2,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:53.880285Z",
+      "value": 40.3,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:55.903043Z",
+      "value": 40.5,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:57.919450Z",
+      "value": 40.8,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:53:59.935389Z",
+      "value": 41.0,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:01.951701Z",
+      "value": 40.5,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:03.962641Z",
+      "value": 40.4,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:05.981967Z",
+      "value": 40.6,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:07.998983Z",
+      "value": 40.5,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:10.020036Z",
+      "value": 40.3,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:12.052016Z",
+      "value": 40.5,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:14.076236Z",
+      "value": 40.5,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:16.113185Z",
+      "value": 40.3,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:18.139904Z",
+      "value": 48.1,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:20.159263Z",
+      "value": 47.5,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:22.183439Z",
+      "value": 55.0,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:24.197902Z",
+      "value": 54.0,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:26.216729Z",
+      "value": 53.1,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    },
+    {
+      "time": "2026-05-24T18:54:28.244093Z",
+      "value": 52.6,
+      "fan": "HIGH",
+      "pwm": 100,
+      "level": "CRITICAL"
+    }
+  ],
+  "gas": [
+    {
+      "time": "2026-05-24T18:52:49.284170Z",
+      "value": 620,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:52:51.301980Z",
+      "value": 605,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:52:53.319784Z",
+      "value": 596,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:52:55.337844Z",
+      "value": 575,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:52:57.354248Z",
+      "value": 572,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:52:59.377567Z",
+      "value": 575,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:01.406653Z",
+      "value": 567,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:03.423301Z",
+      "value": 575,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:05.440695Z",
+      "value": 583,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:07.456742Z",
+      "value": 591,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:09.480416Z",
+      "value": 578,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:11.501240Z",
+      "value": 574,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:13.522105Z",
+      "value": 567,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:15.540229Z",
+      "value": 552,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:17.556740Z",
+      "value": 541,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:19.581194Z",
+      "value": 547,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:21.596864Z",
+      "value": 555,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:23.614345Z",
+      "value": 569,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:25.634821Z",
+      "value": 565,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:27.651647Z",
+      "value": 557,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:29.669338Z",
+      "value": 562,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:31.686324Z",
+      "value": 570,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:33.703118Z",
+      "value": 561,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:35.716699Z",
+      "value": 573,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:37.734723Z",
+      "value": 574,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:39.753756Z",
+      "value": 586,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:41.771945Z",
+      "value": 582,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:43.790127Z",
+      "value": 582,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:45.807036Z",
+      "value": 596,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:47.824719Z",
+      "value": 598,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:49.844634Z",
+      "value": 580,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:51.862960Z",
+      "value": 587,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:53.880339Z",
+      "value": 586,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:55.903081Z",
+      "value": 573,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:57.919489Z",
+      "value": 561,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:53:59.935427Z",
+      "value": 550,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:01.951727Z",
+      "value": 553,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:03.962705Z",
+      "value": 541,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:05.982023Z",
+      "value": 554,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:07.999035Z",
+      "value": 554,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:10.020096Z",
+      "value": 566,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:12.052076Z",
+      "value": 558,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:14.076633Z",
+      "value": 552,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:16.113282Z",
+      "value": 551,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:18.139957Z",
+      "value": 560,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:20.159338Z",
+      "value": 567,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:22.183478Z",
+      "value": 553,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:24.197930Z",
+      "value": 550,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:26.216922Z",
+      "value": 539,
+      "level": "WARNING"
+    },
+    {
+      "time": "2026-05-24T18:54:28.244149Z",
+      "value": 547,
+      "level": "WARNING"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 547 ppm detected",
+      "value": "547 ppm",
+      "time": "2026-05-24T18:54:28.244149Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 52.6\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "52.6\u00b0C",
+      "time": "2026-05-24T18:54:28.244093Z"
+    },
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 539 ppm detected",
+      "value": "539 ppm",
+      "time": "2026-05-24T18:54:26.216922Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 53.1\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "53.1\u00b0C",
+      "time": "2026-05-24T18:54:26.216729Z"
+    },
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 550 ppm detected",
+      "value": "550 ppm",
+      "time": "2026-05-24T18:54:24.197930Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 54.0\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "54.0\u00b0C",
+      "time": "2026-05-24T18:54:24.197902Z"
+    },
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 553 ppm detected",
+      "value": "553 ppm",
+      "time": "2026-05-24T18:54:22.183478Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 55.0\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "55.0\u00b0C",
+      "time": "2026-05-24T18:54:22.183439Z"
+    },
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 567 ppm detected",
+      "value": "567 ppm",
+      "time": "2026-05-24T18:54:20.159338Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 47.5\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "47.5\u00b0C",
+      "time": "2026-05-24T18:54:20.159263Z"
+    },
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 560 ppm detected",
+      "value": "560 ppm",
+      "time": "2026-05-24T18:54:18.139957Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 48.1\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "48.1\u00b0C",
+      "time": "2026-05-24T18:54:18.139904Z"
+    },
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 551 ppm detected",
+      "value": "551 ppm",
+      "time": "2026-05-24T18:54:16.113282Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 40.3\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "40.3\u00b0C",
+      "time": "2026-05-24T18:54:16.113185Z"
+    },
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 552 ppm detected",
+      "value": "552 ppm",
+      "time": "2026-05-24T18:54:14.076633Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 40.5\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "40.5\u00b0C",
+      "time": "2026-05-24T18:54:14.076236Z"
+    },
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 558 ppm detected",
+      "value": "558 ppm",
+      "time": "2026-05-24T18:54:12.052076Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 40.5\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "40.5\u00b0C",
+      "time": "2026-05-24T18:54:12.052016Z"
+    },
+    {
+      "type": "gas",
+      "level": "WARNING",
+      "message": "Gas warning: 566 ppm detected",
+      "value": "566 ppm",
+      "time": "2026-05-24T18:54:10.020096Z"
+    },
+    {
+      "type": "temperature",
+      "level": "CRITICAL",
+      "message": "Temperature critical: 40.3\u00b0C \u2014 Fan HIGH (PWM 100%)",
+      "value": "40.3\u00b0C",
+      "time": "2026-05-24T18:54:10.020036Z"
+    }
+  ],
+  "latest_temp": {
+    "time": "2026-05-24T18:54:28.244093Z",
+    "value": 52.6,
+    "fan": "HIGH",
+    "pwm": 100,
+    "level": "CRITICAL"
+  },
+  "latest_gas": {
+    "time": "2026-05-24T18:54:28.244149Z",
+    "value": 547,
+    "level": "WARNING"
+  },
+  "updated_at": "2026-05-24T18:54:32.208712Z"
 }
