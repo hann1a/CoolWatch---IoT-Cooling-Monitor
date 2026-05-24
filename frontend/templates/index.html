@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoolWatch — IoT Cooling Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <i class="fa-solid fa-wind brand-icon"></i>
+        <span class="brand-text">CoolWatch</span>
+      </div>
+      <div class="sidebar-subtitle">IoT Monitoring System</div>
+
+      <ul class="nav-list">
+        <li><button class="nav-btn active" data-page="dashboard"><i class="fa-solid fa-chart-line"></i><span>Dashboard</span></button></li>
+        <li><button class="nav-btn" data-page="logs"><i class="fa-solid fa-table-list"></i><span>Sensor Logs</span></button></li>
+        <li><button class="nav-btn" data-page="alerts"><i class="fa-solid fa-triangle-exclamation"></i><span>Alerts</span></button></li>
+        <li><button class="nav-btn" data-page="kafka"><i class="fa-solid fa-diagram-project"></i><span>Kafka Monitor</span></button></li>
+        <li><button class="nav-btn" data-page="settings"><i class="fa-solid fa-sliders"></i><span>Settings</span></button></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="kafka-status" id="kafka-status">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Connecting...</span>
+        </div>
+        <div class="sidebar-version">v1.0 — Blida 1</div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main">
+
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="page-title" id="page-title">Dashboard</h1>
+          <span class="page-desc" id="page-desc">Real-time environmental monitoring</span>
+        </div>
+        <div class="topbar-right">
+          <div class="last-update">Last update: <span id="last-update-time">—</span></div>
+        </div>
+      </header>
+
+      <!-- ═══════════════════ PAGE: DASHBOARD ═══════════════════ -->
+      <section class="page active" id="page-dashboard">
+
+        <!-- Metric cards -->
+        <div class="metrics-grid">
+          <div class="metric-card" id="card-temp">
+            <div class="metric-header">
+              <span class="metric-label">Temperature</span>
+              <i class="fa-solid fa-thermometer-half metric-icon"></i>
+            </div>
+            <div class="metric-value" id="val-temp">—</div>
+            <div class="metric-sub">
+              <span class="metric-badge" id="badge-temp">Waiting</span>
+              <span class="metric-extra" id="extra-temp"></span>
+            </div>
+          </div>
+
+          <div class="metric-card" id="card-gas">
+            <div class="metric-header">
+              <span class="metric-label">Gas Level (MQ-2)</span>
+              <i class="fa-solid fa-smog metric-icon"></i>
+            </div>
+            <div class="metric-value" id="val-gas">—</div>
+            <div class="metric-sub">
+              <span class="metric-badge" id="badge-gas">Waiting</span>
+              <span class="metric-extra">ppm</span>
+            </div>
+          </div>
+
+          <div class="metric-card" id="card-fan">
+            <div class="metric-header">
+              <span class="metric-label">Fan Status</span>
+              <i class="fa-solid fa-fan metric-icon" id="fan-icon"></i>
+            </div>
+            <div class="metric-value" id="val-fan">—</div>
+            <div class="metric-sub">
+              <span class="metric-badge badge-neutral" id="badge-pwm">PWM —%</span>
+              <span class="pwm-bar-wrap"><span class="pwm-bar" id="pwm-bar"></span></span>
+            </div>
+          </div>
+
+          <div class="metric-card" id="card-health">
+            <div class="metric-header">
+              <span class="metric-label">System Health</span>
+              <i class="fa-solid fa-heart-pulse metric-icon"></i>
+            </div>
+            <div class="metric-value" id="val-health">—</div>
+            <div class="metric-sub">
+              <span class="metric-badge badge-ok" id="badge-health">Kafka OK</span>
+              <span class="metric-extra" id="extra-msgs"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">Temperature history</span>
+              <span class="chart-unit">°C</span>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-temp"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">Gas level trend</span>
+              <span class="chart-unit">ppm</span>
+            </div>
+            <div class="chart-wrap"><canvas id="chart-gas"></canvas></div>
+          </div>
+        </div>
+
+        <!-- Kafka pipeline -->
+        <div class="pipeline-card">
+          <div class="section-title">
+            <i class="fa-solid fa-diagram-project"></i>
+            Kafka middleware pipeline
+          </div>
+          <div class="pipeline">
+            <div class="pipe-node">
+              <i class="fa-solid fa-microchip"></i>
+              <span class="pipe-name">ESP32</span>
+              <span class="pipe-sub">DHT11 / MQ-2</span>
+            </div>
+            <div class="pipe-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="pipe-node pipe-kafka">
+              <i class="fa-solid fa-upload"></i>
+              <span class="pipe-name">Producer</span>
+              <span class="pipe-sub">sensor_producer.py</span>
+            </div>
+            <div class="pipe-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="pipe-node pipe-kafka">
+              <i class="fa-solid fa-layer-group"></i>
+              <span class="pipe-name">Kafka Topic</span>
+              <span class="pipe-sub">sensor-temperature<br>sensor-gas</span>
+            </div>
+            <div class="pipe-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="pipe-node pipe-kafka">
+              <i class="fa-solid fa-download"></i>
+              <span class="pipe-name">Consumer</span>
+              <span class="pipe-sub">sensor_consumer.py</span>
+            </div>
+            <div class="pipe-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="pipe-node">
+              <i class="fa-solid fa-database"></i>
+              <span class="pipe-name">SQLite</span>
+              <span class="pipe-sub">sensor_data.db</span>
+            </div>
+            <div class="pipe-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="pipe-node">
+              <i class="fa-solid fa-display"></i>
+              <span class="pipe-name">Dashboard</span>
+              <span class="pipe-sub">Flask + HTML</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent alerts preview -->
+        <div class="alerts-preview-card">
+          <div class="section-title">
+            <i class="fa-solid fa-bell"></i>
+            Recent alerts
+          </div>
+          <div id="alert-preview-list" class="alert-list">
+            <div class="alert-empty">No alerts yet. System starting...</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ═══════════════════ PAGE: LOGS ═══════════════════ -->
+      <section class="page" id="page-logs">
+        <div class="panel">
+          <div class="section-title"><i class="fa-solid fa-table-list"></i>Live sensor readings</div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Sensor</th>
+                  <th>Value</th>
+                  <th>Status</th>
+                  <th>Kafka topic</th>
+                </tr>
+              </thead>
+              <tbody id="log-table-body">
+                <tr><td colspan="5" class="empty-row">Waiting for data...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ PAGE: ALERTS ═══════════════════ -->
+      <section class="page" id="page-alerts">
+        <div class="panel">
+          <div class="section-title"><i class="fa-solid fa-triangle-exclamation"></i>Alert history</div>
+          <div id="all-alerts-list" class="alert-list">
+            <div class="alert-empty">No alerts recorded yet.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ PAGE: KAFKA MONITOR ═══════════════════ -->
+      <section class="page" id="page-kafka">
+        <div class="kafka-stats-grid">
+          <div class="k-stat-card">
+            <div class="k-label">Active topics</div>
+            <div class="k-value">2</div>
+          </div>
+          <div class="k-stat-card">
+            <div class="k-label">Broker</div>
+            <div class="k-value">localhost:9092</div>
+          </div>
+          <div class="k-stat-card">
+            <div class="k-label">Consumer group</div>
+            <div class="k-value">cooling-system-group</div>
+          </div>
+          <div class="k-stat-card">
+            <div class="k-label">Total readings</div>
+            <div class="k-value" id="k-total">—</div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:20px">
+          <div class="section-title"><i class="fa-solid fa-layer-group"></i>Topics</div>
+          <div class="topic-list">
+            <div class="topic-item">
+              <i class="fa-solid fa-circle-dot topic-dot"></i>
+              <div>
+                <div class="topic-name">sensor-temperature</div>
+                <div class="topic-desc">DHT11 readings — temperature, fan status, PWM</div>
+              </div>
+              <span class="topic-count" id="tc-temp">—</span>
+            </div>
+            <div class="topic-item">
+              <i class="fa-solid fa-circle-dot topic-dot"></i>
+              <div>
+                <div class="topic-name">sensor-gas</div>
+                <div class="topic-desc">MQ-2 readings — gas ppm, alert level</div>
+              </div>
+              <span class="topic-count" id="tc-gas">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:20px">
+          <div class="section-title"><i class="fa-solid fa-chart-bar"></i>Statistics</div>
+          <div class="stats-grid" id="stats-grid">
+            <div class="stat-item"><div class="stat-label">Avg temperature</div><div class="stat-val" id="stat-avg-temp">—</div></div>
+            <div class="stat-item"><div class="stat-label">Avg gas level</div><div class="stat-val" id="stat-avg-gas">—</div></div>
+            <div class="stat-item"><div class="stat-label">Total alerts</div><div class="stat-val" id="stat-alerts">—</div></div>
+            <div class="stat-item"><div class="stat-label">Critical alerts</div><div class="stat-val" id="stat-critical">—</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ PAGE: SETTINGS ═══════════════════ -->
+      <section class="page" id="page-settings">
+        <div class="panel">
+          <div class="section-title"><i class="fa-solid fa-server"></i>Kafka connection</div>
+          <div class="settings-table">
+            <div class="setting-row"><span class="setting-key">Broker</span><span class="setting-val">localhost:9092</span></div>
+            <div class="setting-row"><span class="setting-key">Consumer group</span><span class="setting-val">cooling-system-group</span></div>
+            <div class="setting-row"><span class="setting-key">Topics</span><span class="setting-val">sensor-temperature, sensor-gas</span></div>
+            <div class="setting-row"><span class="setting-key">Auto offset reset</span><span class="setting-val">latest</span></div>
+            <div class="setting-row"><span class="setting-key">Poll interval</span><span class="setting-val">2 seconds</span></div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:20px">
+          <div class="section-title"><i class="fa-solid fa-database"></i>Storage</div>
+          <div class="settings-table">
+            <div class="setting-row"><span class="setting-key">Database</span><span class="setting-val">SQLite — data/sensor_data.db</span></div>
+            <div class="setting-row"><span class="setting-key">Snapshot</span><span class="setting-val">data/latest_snapshot.json (1s refresh)</span></div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:20px">
+          <div class="section-title"><i class="fa-solid fa-sliders"></i>Alert thresholds</div>
+          <div class="settings-table">
+            <div class="setting-row"><span class="setting-key">Temp warning</span><span class="setting-val badge-ok">30 °C</span></div>
+            <div class="setting-row"><span class="setting-key">Temp critical</span><span class="setting-val badge-danger">40 °C</span></div>
+            <div class="setting-row"><span class="setting-key">Gas warning</span><span class="setting-val badge-warn">400 ppm</span></div>
+            <div class="setting-row"><span class="setting-key">Gas critical</span><span class="setting-val badge-danger">700 ppm</span></div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:20px">
+          <div class="section-title"><i class="fa-solid fa-microchip"></i>Sensor configuration</div>
+          <div class="settings-table">
+            <div class="setting-row"><span class="setting-key">Sensor ID</span><span class="setting-val">ESP32-S1</span></div>
+            <div class="setting-row"><span class="setting-key">Publish interval</span><span class="setting-val">2 seconds</span></div>
+            <div class="setting-row"><span class="setting-key">Temperature sensor</span><span class="setting-val">DHT11</span></div>
+            <div class="setting-row"><span class="setting-key">Gas sensor</span><span class="setting-val">MQ-2</span></div>
+            <div class="setting-row"><span class="setting-key">Fan driver</span><span class="setting-val">L298N (PWM control)</span></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script src="../static/dashboard.js"></script>
+</body>
+</html>
